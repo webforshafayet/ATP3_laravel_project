@@ -46,6 +46,7 @@
             <button class="btn btn-success" style="margin:5px">BACK</button></a>
             <a href="{{route('home.editprofile')}}">
                 <button class="btn btn-success" style="margin:5px">Edit</button></a>
+                <button class="btn btn-success" style="margin:5px">Delete</button></a>
                 
 
              <button>   <a href="/logout">logout</a></button>

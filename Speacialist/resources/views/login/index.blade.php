@@ -27,6 +27,8 @@
 				<tr>
 					<td><input  type="submit" name= "submit" value="Login" style="color: green;"></td>
 					<td></td>
+					 <a class="btn btn-link" href="{{ route('password.request') }}">
+                    Forgot Your Password?
 					<td><a href="{{route('registration')}}" style="color:green">Not registered yet?</td>
 				</tr>
 			</table>

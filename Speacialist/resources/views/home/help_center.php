@@ -24,12 +24,12 @@
 			You can also messaging us through email.
 		<h4>Email</h4><a href="email.php">faiyaz@gmail.com</a>
 			
-			</tr>	
+			</tr>	<br>
 
 
             
     </table>
-    <a href="/home/profile">Profile</a> |
+    <a href="/home">Back</a> |
 	</form>
 </body>
 </html>

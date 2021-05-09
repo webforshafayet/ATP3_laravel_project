@@ -13,6 +13,7 @@
   <div class="wrapper">
 
     @include('partials.nav')
+    
     @yield('content')
     @include('partials.footer')
   

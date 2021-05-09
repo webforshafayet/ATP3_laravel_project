@@ -51,7 +51,7 @@
                 <tr>
                     <td>Image</td>
                     <td>
-                        <input type="file" name="Image" value="{{ $user['pics'] }}">
+                        <input type="file" name="Image" value="{{ $user['pic'] }}">
                     </td>
                 </tr>
                 <tr>

@@ -30,19 +30,7 @@ class LoginController extends Controller
            return redirect('/login');
 
         }elseif(count($user) > 0 ){
-            //$req->session()->put('password', $req->password);
-            //$req->session()->get('name');
-            //$req->session()->forget('name');
-            //$req->session()->flush();
-            //$req->session()->has('name');
-
-            //$req->session()->flash('msg', 'Invalid user info...');
-            //$req->session()->flash('error', 'Bad request error...');
-            //$req->session()->get('msg');
-            //$req->session()->keep('msg');
-            //$req->session()->get('msg');
-            //$req->session()->reflash();
-            //$req->session()->pull('name');
+            
 
             $req->session()->put('username', $req->username);
             return redirect('/home');

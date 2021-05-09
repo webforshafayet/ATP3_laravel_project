@@ -37,12 +37,14 @@ public function profile(Request $request)
         return view('home.profile', compact('user'));
     }
  
-     public function editprofile(Request $request)
+    public function editprofile(Request $request)
     {
         $user = User::where('username', $request->session()->get('username'))
                     ->first();
         return view('home.editprofile', compact('user'));
     }
+
+
 
 
     public function updateProfile(UserRequest $request)
@@ -81,11 +83,42 @@ public function profile(Request $request)
         return view('home.notification')->with('notification', $notification);
     }
 
+
+
+     public function product(){
+        
+        $product = User::all();
+        //$userlist = $this->getUserlist();
+        return view('home.product')->with('product', $product);
+    }
+
+     public function cart(){
+        
+        $cart = User::all();
+        //$userlist = $this->getUserlist();
+        return view('home.cart')->with('cart', $cart);
+    }
+
+
+      public function messages(){
+        
+        $messages = User::all();
+        //$userlist = $this->getUserlist();
+        return view('home.messages')->with('messages', $messages);
+    }
+
      public function help_center(){
         
         $help_center = User::all();
         //$userlist = $this->getUserlist();
         return view('home.help_center')->with('help_center', $help_center);
+    }
+
+     public function about(){
+        
+        $about = User::all();
+        //$userlist = $this->getUserlist();
+        return view('home.about')->with('about', $about);
     }
 
  public function comment(){

@@ -47,6 +47,9 @@ Route::group(['middleware'=> 'sess'], function(){
     Route::get('/home', ['uses'=>'HomeController@index']);
     
     Route::get('/home/create', 'HomeController@create')->middleware('sess')->name('home.create');
+    Route::get('/home/product', 'HomeController@product')->middleware('sess')->name('home.product');
+    Route::get('/home/cart', 'HomeController@cart')->middleware('sess')->name('home.cart');
+    Route::get('/home/messages', 'HomeController@messages')->middleware('sess')->name('home.messages');
     Route::post('/home/create', 'HomeController@store');
     Route::get('/home/userlist', 'HomeController@userlist')->name('home.userlist');
     Route::get('/home/seller', 'HomeController@seller')->name('home.seller');
@@ -58,6 +61,7 @@ Route::group(['middleware'=> 'sess'], function(){
     Route::get('/home/profile', 'HomeController@profile')->name('home.profile');
     Route::get('/home/notification', 'HomeController@notification')->name('home.notification');
     Route::get('/home/help_center', 'HomeController@help_center')->name('home.help_center');
+    Route::get('/home/about', 'HomeController@about')->name('home.about');
     Route::get('/home/comment', 'HomeController@comment')->name('home.comment');
     Route::get('/home/profile', 'HomeController@profile')->name('home.profile');
       Route::get('/home/editprofile', 'HomeController@editprofile')->name('home.editprofile');
@@ -69,14 +73,19 @@ Route::get('/home/deleteprofile/{id}', 'HomeController@deleteprofile');
     Route::post('/home/delete/{id}', 'HomeController@destroy');
     Route::get('/home/details/{id}', 'HomeController@show');
    
-   Route::get('/product', 'Frontend\ProductsController@index')->name('product.index');
-Route::get('/product', 'Frontend\ProductsController@show')->name('product.show');
-Route::get('/search', 'Frontend\PagesController@search')->name('product.search');
+   //Route::get('/product', 'Frontend\ProductsController@index')->name('product.index');
+//Route::get('/product', 'Frontend\ProductsController@show')->name('product.show');
+//Route::get('/search', 'Frontend\PagesController@search')->name('product.search');
 
  
 
    
+Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+  Route::post('/password/resetPost', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 
+  // Password Reset
+  Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+  Route::post('/password/reset', 'Auth\ResetPasswordController@reset')->name('password.reset.post');
    
 
 
